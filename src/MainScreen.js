@@ -68,6 +68,7 @@ class MainScreen extends Phaser.Scene{
                 
                 this.time.delayedCall(1500,()=>{
                     this.buttonGrid.resetString()
+                    this.mainContainer.updatemyNumber('')
                     this.mainContainer.updateNumber(generateString())
                     this.mainContainer.keyPad.clearTint()
                     this.buttonGrid.children.iterate(child=>child.setInteractive()) 
@@ -81,6 +82,7 @@ class MainScreen extends Phaser.Scene{
         tintEvent = new Phaser.Time.TimerEvent({delay:1500,callbackScope:this,repeat:0,callback:()=>{
             this.buttonGrid.children.iterate(child=>child.disableInteractive())
             this.buttonGrid.resetString()
+            this.mainContainer.updatemyNumber('')
             this.mainContainer.updateNumber(generateString())
             this.mainContainer.keyPad.clearTint()
             this.buttonGrid.children.iterate(child=>child.setInteractive())
@@ -107,6 +109,7 @@ class MainScreen extends Phaser.Scene{
                     this.buttonGrid.children.iterate(child=>child.disableInteractive())
                     this.time.delayedCall(1500,()=>{
                         this.buttonGrid.resetString()
+                        this.mainContainer.updatemyNumber('')
                         this.mainContainer.updateNumber(generateString())
                         this.mainContainer.keyPad.clearTint()
                         this.buttonGrid.children.iterate(child=>child.setInteractive())
@@ -115,6 +118,7 @@ class MainScreen extends Phaser.Scene{
                 }
                 else{
                 this.buttonGrid.getNumber(child)
+                this.mainContainer.updatemyNumber(this.buttonGrid.string)
                 }
 
             })

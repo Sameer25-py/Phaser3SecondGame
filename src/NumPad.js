@@ -38,6 +38,7 @@ class NumPad extends Phaser.GameObjects.Group{
 
             child.setTint(0x00ff00)
             this.string+=child.texture.key
+            
 
         }
         else{
